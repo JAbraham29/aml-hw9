@@ -102,7 +102,7 @@ def eval_once(saver, summary_writer, top_k_op, summary_op):
 
             # Compute precision @ 1.
             precision = true_count / total_sample_count
-            print('%s: Accuracy = %.3f' % (datetime.now(), precision))
+            print('%s: step %d Accuracy = %.3f' % (datetime.now(), int(global_step), precision))
 
             summary = tf.Summary()
             summary.ParseFromString(sess.run(summary_op))
